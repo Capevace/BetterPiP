@@ -1,7 +1,4 @@
-
 function onClick(tab) {
-
-
   chrome.tabs.sendMessage(tab.id, { type: 'get_video' }, function(response) {
     // openUrl(response.url);
   });
