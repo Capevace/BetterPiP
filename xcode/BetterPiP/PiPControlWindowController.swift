@@ -9,31 +9,23 @@
 import Cocoa
 import Foundation
 
-class LMVideoWindowController: NSWindowController {
+class PiPControlWindowController: NSWindowController {
 
-    var mainVC: ViewController! = nil
+    var mainVC: PiPControlViewController! = nil
     
     override func windowDidLoad() {
         super.windowDidLoad()
-        
-        NotificationCenter.default.addObserver(self, selector: #selector(self.onMessage), name: NSNotification.Name(rawValue: "key"), object: nil)
-
         
         self.window?.makeKeyAndOrderFront(nil)
         self.window?.close()
     }
     
-    func onMessage() {
-        print("Got Message")
-    }
-    
-    func showVideo(url: URL, seconds: Float64) {
+    func showVideo(url: URL, seconds: Float) {
         if (mainVC !== nil) {
             mainVC.dismiss(nil)
         }
         
-        mainVC = NSStoryboard(name:"Main", bundle: nil).instantiateController(withIdentifier: "mainWindowVC") as! ViewController
-        
+        mainVC = NSStoryboard(name:"Main", bundle: nil).instantiateController(withIdentifier: "mainWindowVC") as! PiPControlViewController
         self.window?.contentViewController = mainVC
         
         mainVC.playVideo(videoUrl: url, seconds: seconds)

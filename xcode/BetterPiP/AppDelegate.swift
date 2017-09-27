@@ -11,12 +11,8 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    var main: LMVideoWindowController!
-    
-    override func application(_ sender: NSApplication, delegateHandlesKey key: String) -> Bool {
-        return key == "videos"
-    }
-    
+    var main: PiPControlWindowController!
+    let statusItem = NSStatusBar.system().statusItem(withLength:NSSquareStatusItemLength)
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
@@ -24,23 +20,35 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let appleEventManager = NSAppleEventManager.shared()
         appleEventManager.setEventHandler(self, andSelector: #selector(handleURL), forEventClass: AEEventClass(kInternetEventClass), andEventID: AEEventID(kAEGetURL))
         
-//        main = NSStoryboard(name : "Main", bundle: nil).instantiateController(withIdentifier: "mainWindow") as! LMVideoWindowController
+        if let button = statusItem.button {
+            button.image = NSImage(named: NSImage.Name(string: "StatusBarButtonImage") as String)
+        }
+        
+        let menu = NSMenu()
+        
+        menu.addItem(NSMenuItem(title: "Install Chrome Extension", action: #selector(openChromeExtensionPage), keyEquivalent: ""))
+        menu.addItem(NSMenuItem.separator())
+        menu.addItem(NSMenuItem(title: "Quit BetterPiP", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
+        
+        statusItem.menu = menu
     }
     
     func handleURL(event: NSAppleEventDescriptor, reply: NSAppleEventDescriptor) {
-        let window = NSStoryboard(name : "Main", bundle: nil).instantiateController(withIdentifier: "mainWindow") as! LMVideoWindowController
+        let window = NSStoryboard(name : "Main", bundle: nil).instantiateController(withIdentifier: "mainWindow") as! PiPControlWindowController
         
         let url = URL(string: (event.paramDescriptor(forKeyword: keyDirectObject)?.stringValue)!)
-        print("REAL URL: \(url)")
-        
         let queryUrl: String = ((url?.queryParameters?["url"]!)!).removingPercentEncoding!
-        print("URL: \(queryUrl)")
+        let startTimeString: String = (url?.queryParameters?["time"])!
+        var startTime: Float = 0.0;
         
-        window.showVideo(url: URL(string: queryUrl)!, seconds: 0.0)
-    }
-
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+        if (startTimeString != "" || startTimeString != "undefined") {
+            startTime = Float(startTimeString)!
+        }
+        
+        print("Received URL: \(queryUrl)")
+        print("Start at: \(startTime)")
+        
+        window.showVideo(url: URL(string: queryUrl)!, seconds: startTime)
     }
 
     func notify(message: String) {
@@ -50,10 +58,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         notification.soundName = NSUserNotificationDefaultSoundName
         NSUserNotificationCenter.default.deliver(notification)
     }
+    
+    func openChromeExtensionPage() {
+        if let url = URL(string: "https://www.google.com"), NSWorkspace.shared().open(url) {
+            print("default browser was successfully opened")
+        }
+
+    }
 }
 
 extension URL {
-    
     public var queryParameters: [String: String]? {
         guard let components = URLComponents(url: self, resolvingAgainstBaseURL: true), let queryItems = components.queryItems else {
             return nil

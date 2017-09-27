@@ -5,14 +5,15 @@
   },
   "content_scripts": [{
     "matches": ["<all_urls>"],
-    "js": ["utils.js", "youtube.js", "content.js"]
+    "js": ["utils.js", "youtube.js", "content.js"],
+    "run_at": "document_end"
   }],
   "browser_action": {
-    "default_icon": "icon.png"
+    "default_icon": "new_icon.png"
   },
   "description": "__MSG_gmailcheck_description__",
   "icons": {
-    "128": "icon.png"
+    "512": "new_icon.png"
   },
   "name": "BetterPiP",
   "permissions": [
@@ -20,7 +21,7 @@
     "tabs",
     "activeTab",
     "webNavigation",
-    "*://*.google.com/"
+    "notifications"
    ],
   "version": "4.4.0",
   "manifest_version": 2

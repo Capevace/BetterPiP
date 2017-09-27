@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		80F0F1F11F75805E00EC5A7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F0F1F01F75805E00EC5A7A /* AppDelegate.swift */; };
-		80F0F1F31F75805E00EC5A7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F0F1F21F75805E00EC5A7A /* ViewController.swift */; };
+		80F0F1F31F75805E00EC5A7A /* PiPControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F0F1F21F75805E00EC5A7A /* PiPControlViewController.swift */; };
 		80F0F1F51F75805E00EC5A7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80F0F1F41F75805E00EC5A7A /* Assets.xcassets */; };
 		80F0F1F81F75805E00EC5A7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80F0F1F61F75805E00EC5A7A /* Main.storyboard */; };
 		80F0F2021F75808200EC5A7A /* PIP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80F0F2001F75808200EC5A7A /* PIP.framework */; };
 		80F0F2051F7580E300EC5A7A /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80F0F2041F7580E300EC5A7A /* AVKit.framework */; };
 		80F0F2071F75811100EC5A7A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80F0F2061F75811100EC5A7A /* AVFoundation.framework */; };
-		80F0F2131F75874D00EC5A7A /* LMVideoWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F0F2121F75874D00EC5A7A /* LMVideoWindowController.swift */; };
+		80F0F2131F75874D00EC5A7A /* PiPControlWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F0F2121F75874D00EC5A7A /* PiPControlWindowController.swift */; };
 		80F0F2151F758CD100EC5A7A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80F0F2141F758CD100EC5A7A /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		80F0F1ED1F75805E00EC5A7A /* BetterPiP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterPiP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80F0F1F01F75805E00EC5A7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		80F0F1F21F75805E00EC5A7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		80F0F1F21F75805E00EC5A7A /* PiPControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiPControlViewController.swift; sourceTree = "<group>"; };
 		80F0F1F41F75805E00EC5A7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		80F0F1F71F75805E00EC5A7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80F0F1F91F75805E00EC5A7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -36,7 +36,7 @@
 		80F0F20F1F75831800EC5A7A /* NSObject-Protocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSObject-Protocol.h"; sourceTree = "<group>"; };
 		80F0F2101F75832800EC5A7A /* NSEvent-PIPExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSEvent-PIPExtensions.h"; sourceTree = "<group>"; };
 		80F0F2111F75833600EC5A7A /* CDStructures.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDStructures.h; sourceTree = "<group>"; };
-		80F0F2121F75874D00EC5A7A /* LMVideoWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LMVideoWindowController.swift; sourceTree = "<group>"; };
+		80F0F2121F75874D00EC5A7A /* PiPControlWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PiPControlWindowController.swift; sourceTree = "<group>"; };
 		80F0F2141F758CD100EC5A7A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -55,6 +55,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		80B32F7A1F7C136700CEA192 /* PIP */ = {
+			isa = PBXGroup;
+			children = (
+				80F0F20A1F75820400EC5A7A /* BetterPiP-Bridging-Header.h */,
+				80F0F20B1F75829200EC5A7A /* PIPViewController.h */,
+				80F0F20C1F7582B500EC5A7A /* PIPViewControllerDelegate.h */,
+				80F0F20D1F7582EA00EC5A7A /* PIPPanel.h */,
+				80F0F20E1F75830A00EC5A7A /* NSViewControllerPresentationAnimator-Protocol.h */,
+				80F0F20F1F75831800EC5A7A /* NSObject-Protocol.h */,
+				80F0F2101F75832800EC5A7A /* NSEvent-PIPExtensions.h */,
+				80F0F2111F75833600EC5A7A /* CDStructures.h */,
+			);
+			path = PIP;
+			sourceTree = "<group>";
+		};
 		80F0F1E41F75805E00EC5A7A = {
 			isa = PBXGroup;
 			children = (
@@ -76,20 +91,13 @@
 			isa = PBXGroup;
 			children = (
 				80F0F1F01F75805E00EC5A7A /* AppDelegate.swift */,
-				80F0F1F21F75805E00EC5A7A /* ViewController.swift */,
-				80F0F2121F75874D00EC5A7A /* LMVideoWindowController.swift */,
+				80F0F2121F75874D00EC5A7A /* PiPControlWindowController.swift */,
+				80F0F1F21F75805E00EC5A7A /* PiPControlViewController.swift */,
 				80F0F1F41F75805E00EC5A7A /* Assets.xcassets */,
 				80F0F1F61F75805E00EC5A7A /* Main.storyboard */,
 				80F0F1F91F75805E00EC5A7A /* Info.plist */,
 				80F0F2001F75808200EC5A7A /* PIP.framework */,
-				80F0F20A1F75820400EC5A7A /* BetterPiP-Bridging-Header.h */,
-				80F0F20B1F75829200EC5A7A /* PIPViewController.h */,
-				80F0F20C1F7582B500EC5A7A /* PIPViewControllerDelegate.h */,
-				80F0F20D1F7582EA00EC5A7A /* PIPPanel.h */,
-				80F0F20E1F75830A00EC5A7A /* NSViewControllerPresentationAnimator-Protocol.h */,
-				80F0F20F1F75831800EC5A7A /* NSObject-Protocol.h */,
-				80F0F2101F75832800EC5A7A /* NSEvent-PIPExtensions.h */,
-				80F0F2111F75833600EC5A7A /* CDStructures.h */,
+				80B32F7A1F7C136700CEA192 /* PIP */,
 			);
 			path = BetterPiP;
 			sourceTree = "<group>";
@@ -176,9 +184,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80F0F1F31F75805E00EC5A7A /* ViewController.swift in Sources */,
+				80F0F1F31F75805E00EC5A7A /* PiPControlViewController.swift in Sources */,
 				80F0F1F11F75805E00EC5A7A /* AppDelegate.swift in Sources */,
-				80F0F2131F75874D00EC5A7A /* LMVideoWindowController.swift in Sources */,
+				80F0F2131F75874D00EC5A7A /* PiPControlWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,7 +310,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.mateffy.BetterPiP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "BetterPiP/BetterPiP-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "BetterPiP/PIP/BetterPiP-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -321,7 +329,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = me.mateffy.BetterPiP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "BetterPiP/BetterPiP-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "BetterPiP/PIP/BetterPiP-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

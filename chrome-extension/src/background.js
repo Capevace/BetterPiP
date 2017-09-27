@@ -1,6 +1,13 @@
 function onClick(tab) {
   chrome.tabs.sendMessage(tab.id, { type: 'get_video' }, function(response) {
-    // openUrl(response.url);
+    if (response && !response.success) {
+      chrome.notifications.create(null, {
+        type: "basic",
+        title: "Unable to use Picture-in-Picture",
+        message: "Please make sure there is an HTML5 Video on the page.",
+        iconUrl: "new_icon.png"
+      });
+    }
   });
 
 }

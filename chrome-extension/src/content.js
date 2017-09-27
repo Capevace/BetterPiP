@@ -2,14 +2,15 @@ chrome.runtime.onMessage.addListener(async function(request, sender, sendRespons
   if (request.type === 'get_video') {
     const pageUrl = String(window.location);
     const isYoutube = /^(https?\:\/\/)?(www\.youtube\.com|youtu\.?be)\/.+$/.test(pageUrl);
-
+    let videoData = null;
     if (isYoutube) {
       const videoId = getParameterByName('v');
-      const url = await getYoutubeVideoSource(videoId);
-      openUrl(url);
+      videoData = await getYoutubeVideoData(videoId);
     } else {
-      const url = getDefaultUrl();
-      openUrl(url);
+      videoData = getDefaultVideoData();
     }
+
+    if (videoData)
+      openUrl(videoData);
   }
 });

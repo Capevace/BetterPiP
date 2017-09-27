@@ -10,12 +10,12 @@ import Cocoa
 import AVKit
 import AVFoundation
 
-class ViewController: NSViewController {
+class PiPControlViewController: NSViewController {
 
     @IBOutlet weak var playerView: AVPlayerView!
     
-    @IBOutlet weak var txt: NSTextField!
-    /// Create a new PIPViewController instance, set the delegate to self and set the aspect ratio of the video to 16:9
+    var player: AVPlayer? = nil
+    var pipIsActive = false
     lazy var pip: PIPViewController! = {
         let pip = PIPViewController()!
         pip.delegate = self
@@ -29,22 +29,14 @@ class ViewController: NSViewController {
         return pip
     }()
     
-    /// Our AVPlayer instance
-    var player: AVPlayer? = nil
-    
-    /// Whether the pipIsActive or not
-    var pipIsActive = false
-    
-    var window: NSWindow?
-    
-    func playVideo(videoUrl: URL, seconds: Float64) {
+    func playVideo(videoUrl: URL, seconds: Float) {
         if (player !== nil && (player?.isPlaying)!) {
             player?.pause()
         }
         
         player = AVPlayer(url: videoUrl)
         
-        let targetTime: CMTime = CMTimeMakeWithSeconds(seconds, Int32(NSEC_PER_SEC));
+        let targetTime: CMTime = CMTimeMakeWithSeconds(Float64(seconds), Int32(NSEC_PER_SEC));
         player?.seek(to: targetTime)
         
         playerView.player = player;
@@ -54,10 +46,6 @@ class ViewController: NSViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    override func viewDidAppear() {
-        //openPIP()
     }
     
     /// Displays the current view controller in picture in picture and sets the play button to be true.
@@ -74,11 +62,9 @@ class ViewController: NSViewController {
 
 }
 
-extension ViewController: PIPViewControllerDelegate {
-    
+extension PiPControlViewController: PIPViewControllerDelegate {
     /// Called when the PIPPanel closes
     func pipDidClose(_ pip: PIPViewController!) {
-//        NSApplication.shared().terminate(self)
         player?.pause()
     }
     
@@ -96,7 +82,6 @@ extension ViewController: PIPViewControllerDelegate {
     func pipActionPause(_ pip: PIPViewController!) {
         player?.pause()
     }
-    
 }
 
 extension AVPlayer {

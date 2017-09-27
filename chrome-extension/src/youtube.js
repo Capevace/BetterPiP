@@ -1,4 +1,5 @@
-async function getYoutubeVideoSource(videoId) {
+// Get an mp4 stream url for a given youtube video ID.
+async function getYoutubeVideoData(videoId) {
   const response = await fetch(`https://www.youtube.com/get_video_info?video_id=${videoId}`);
   const body = await response.text();
   const videoData = decodeUrlEncodedString(body);
@@ -9,13 +10,20 @@ async function getYoutubeVideoSource(videoId) {
   const videoSources = parseStreamMapUrls(videoData.url_encoded_fmt_stream_map);
   const source = videoSources['hd720'] || videoSources['medium'];
 
-  if (source) {
-    return source.url;
-  }
+  const videoElement = document.querySelector('video');
 
-  return null;
+  if (videoElement)
+    videoElement.pause();
+  
+  return {
+    url: source,
+    time: videoElement
+      ? videoElement.currentTime
+      : 0.0
+  };
 }
 
+// Decodes a url-like encoded data string (key1=val&key2=val)
 function decodeUrlEncodedString(queryString) {
   const entities = queryString.split('&');
   let data = {};
@@ -31,6 +39,7 @@ function decodeUrlEncodedString(queryString) {
   return data;
 }
 
+// Gets mp4 videos from stream map data
 function parseStreamMapUrls(streamMap) {
   let urls = {};
 

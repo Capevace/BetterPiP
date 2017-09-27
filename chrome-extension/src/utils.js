@@ -21,21 +21,31 @@ function submitRequest(buttonId) {
   }
 }
 
-function openUrl(url, time){
-  time = time || 0
+function openUrl(videoData) {
+  if (!videoData) return;
+
   var d = (window.parent)?window.parent.document:window.document
   var f = d.getElementById('customUrlLink')
   if (f ) {f.parentNode.removeChild(f);}
   var a = d.createElement('a');
-  a.href =  'betterpip://open?url=' + encodeURIComponent(url) //+ '&time=' + encodeURIComponent(time);    
-  console.log(a.href);
+  a.href =  'betterpip://open?url=' + encodeURIComponent(videoData.url) + '&time=' + encodeURIComponent(videoData.time);
+  alert(a.href);
   a.innerHTML = "Link"                                    
-  a.setAttribute('id',        'customUrlLink');
+  a.setAttribute('id','customUrlLink');
   a.setAttribute("style", "display:none; "); 
   d.body.appendChild(a); 
   submitRequest("customUrlLink");
 }
 
-function getDefaultUrl() {
-  return document.querySelector('video').src;
+function getDefaultVideoData() {
+  const video = document.querySelector('video');
+  if (!video) return;
+  
+  const videoSource = video.querySelector('source[type=video\\/mp4]');
+
+  video.pause();
+
+  return videoSource && videoSource.src
+    ? { url: videoSource.src, time: video.currentTime || 0.0 }
+    : null;
 }
