@@ -29,8 +29,8 @@ function openUrl(videoData) {
   if (f ) {f.parentNode.removeChild(f);}
   var a = d.createElement('a');
   a.href =  'betterpip://open?url=' + encodeURIComponent(videoData.url) + '&time=' + encodeURIComponent(videoData.time);
-  alert(a.href);
-  a.innerHTML = "Link"                                    
+  //alert(a.href);
+  a.innerHTML = "Link"
   a.setAttribute('id','customUrlLink');
   a.setAttribute("style", "display:none; "); 
   d.body.appendChild(a); 

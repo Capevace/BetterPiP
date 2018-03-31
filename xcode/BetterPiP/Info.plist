@@ -8,6 +8,8 @@
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
+		<key>NSAllowsArbitraryLoadsInWebContent</key>
+		<true/>
 	</dict>
 	<key>CFBundleURLTypes</key>
 	<array>
@@ -32,6 +34,8 @@
 	<string>6.0</string>
 	<key>CFBundleName</key>
 	<string>$(PRODUCT_NAME)</string>
+	<key>LSApplicationCategoryType</key>
+	<string>public.app-category.entertainment</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
@@ -44,6 +48,14 @@
 	<string>Copyright © 2017 Lukas von Mateffy. All rights reserved.</string>
 	<key>NSMainStoryboardFile</key>
 	<string>Main</string>
+	<key>NSExtension</key>
+	<dict>
+		<key>NSExtensionPointIdentifier
+NSExtensionPointIdentifier
+NSExtensionPointIdentifier</key>
+		<string>com.apple.share-services
+com.apple.share-services</string>
+	</dict>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 </dict>

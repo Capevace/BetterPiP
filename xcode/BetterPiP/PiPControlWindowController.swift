@@ -9,25 +9,24 @@
 import Cocoa
 import Foundation
 
-class PiPControlWindowController: NSWindowController {
+final class PiPControlWindowController: NSWindowController {
 
     var mainVC: PiPControlViewController! = nil
     
     override func windowDidLoad() {
         super.windowDidLoad()
         
-        self.window?.makeKeyAndOrderFront(nil)
-        self.window?.close()
+//        self.window?.makeKeyAndOrderFront(nil)
+//        self.window?.close()
     }
     
     func showVideo(url: URL, seconds: Float) {
         if (mainVC !== nil) {
-            mainVC.dismiss(nil)
-        }
-        
-        mainVC = NSStoryboard(name:"Main", bundle: nil).instantiateController(withIdentifier: "mainWindowVC") as! PiPControlViewController
+//            mainVC.dismiss(nil)
+        } else {
+        mainVC = NSStoryboard(name:NSStoryboard.Name(rawValue: "Main"), bundle: nil).instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "mainWindowVC")) as! PiPControlViewController
         self.window?.contentViewController = mainVC
-        
+        }
         mainVC.playVideo(videoUrl: url, seconds: seconds)
     }
 

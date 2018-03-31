@@ -44,6 +44,7 @@
 @property(copy, nonatomic) NSString *name; // @synthesize name=_name;
 @property(nonatomic) __weak NSView *replacementView; // @synthesize replacementView=_replacementView;
 @property(nonatomic) __weak id <PIPViewControllerDelegate> delegate; // @synthesize delegate=_delegate;
+- (void)cxx_destruct;
 - (unsigned int)copyActiveFencePort;
 - (void)animateDismissalOfViewController:(id)arg1 fromViewController:(id)arg2;
 - (void)animatePresentationOfViewController:(id)arg1 fromViewController:(id)arg2;

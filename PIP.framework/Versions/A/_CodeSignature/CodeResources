@@ -6,40 +6,31 @@
 	<dict>
 		<key>Resources/Info.plist</key>
 		<data>
-		laZIqb1Bf1PWi2zJHqq9nC2DvXA=
+		j3i1EyUrGox8WSRK8vxC15iur8E6DgvgfK8zyhPphNA=
 		</data>
 		<key>Resources/framework.sb</key>
 		<data>
-		Z/b8b31rZtYnxiCBn98yq2ZaQIE=
+		BrLJvMrNp6g7Kgk7vXm7KJLgQcUJp45Fh8OaPh3rizU=
 		</data>
 		<key>Resources/version.plist</key>
 		<data>
-		jB3Dpp/muEHm6o65kDzSWdzGv+Y=
+		oeFO/xLw56FfEC5GToj5LytsjW37zDqxNUIIGS7EOx8=
 		</data>
 	</dict>
 	<key>files2</key>
 	<dict>
 		<key>Resources/Info.plist</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			kQtRZbk7o9eJVr5pQ0EeUoVRfW2lxys0Lpw6+87usOg=
-			</data>
-		</dict>
+		<data>
+		j3i1EyUrGox8WSRK8vxC15iur8E6DgvgfK8zyhPphNA=
+		</data>
 		<key>Resources/framework.sb</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			BrLJvMrNp6g7Kgk7vXm7KJLgQcUJp45Fh8OaPh3rizU=
-			</data>
-		</dict>
+		<data>
+		BrLJvMrNp6g7Kgk7vXm7KJLgQcUJp45Fh8OaPh3rizU=
+		</data>
 		<key>Resources/version.plist</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			VHCkDNOoAgXBVcnQCrBHXrNatmvZOJ9E64dhkL0Ds8Q=
-			</data>
-		</dict>
+		<data>
+		oeFO/xLw56FfEC5GToj5LytsjW37zDqxNUIIGS7EOx8=
+		</data>
 	</dict>
 	<key>rules</key>
 	<dict>
@@ -58,11 +49,6 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
-		</dict>
-		<key>^Resources/Base\.lproj/</key>
-		<dict>
-			<key>weight</key>
-			<real>1010</real>
 		</dict>
 		<key>^version.plist$</key>
 		<true/>
@@ -122,11 +108,6 @@
 			<true/>
 			<key>weight</key>
 			<real>1100</real>
-		</dict>
-		<key>^Resources/Base\.lproj/</key>
-		<dict>
-			<key>weight</key>
-			<real>1010</real>
 		</dict>
 		<key>^[^/]+$</key>
 		<dict>
