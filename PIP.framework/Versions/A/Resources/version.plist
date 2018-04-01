@@ -5,14 +5,14 @@
 	<key>BuildAliasOf</key>
 	<string>PIPAgent</string>
 	<key>BuildVersion</key>
-	<string>3</string>
+	<string>2</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>83.1</string>
+	<string>50</string>
 	<key>ProjectName</key>
 	<string>PIPFramework</string>
 	<key>SourceVersion</key>
-	<string>83001000000000</string>
+	<string>50000000000000</string>
 </dict>
 </plist>

@@ -1,6 +1,14 @@
 function onClick(tab) {
-  chrome.tabs.sendMessage(tab.id, { type: 'get_video' }, function(response) {
-    if (response && !response.success) {
+  chrome.tabs.sendMessage(tab.id, {type: 'get_video'}, function(response) {
+
+    if (response.success) {
+      chrome.notifications.create(null, {
+        type: "basic",
+        title: "Response",
+        message: response.url,
+        iconUrl: "new_icon.png"
+      });
+    } else {
       chrome.notifications.create(null, {
         type: "basic",
         title: "Unable to use Picture-in-Picture",
@@ -11,6 +19,7 @@ function onClick(tab) {
   });
 
 }
+
 
 chrome.browserAction.onClicked.addListener(onClick);
 

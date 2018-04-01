@@ -10,7 +10,15 @@ chrome.runtime.onMessage.addListener(async function(request, sender, sendRespons
       videoData = getDefaultVideoData();
     }
 
-    if (videoData)
+    if (videoData) {
       openUrl(videoData);
+      sendResponse({url: pageUrl,
+                    success: true});
+    } else {
+      sendResponse({url: pageUrl,
+                    success: false});
+    }
+
   }
+
 });

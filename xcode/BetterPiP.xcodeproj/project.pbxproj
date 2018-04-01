@@ -12,11 +12,36 @@
 		80F0F1F51F75805E00EC5A7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80F0F1F41F75805E00EC5A7A /* Assets.xcassets */; };
 		80F0F1F81F75805E00EC5A7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 80F0F1F61F75805E00EC5A7A /* Main.storyboard */; };
 		80F0F2021F75808200EC5A7A /* PIP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80F0F2001F75808200EC5A7A /* PIP.framework */; };
-		80F0F2051F7580E300EC5A7A /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80F0F2041F7580E300EC5A7A /* AVKit.framework */; };
-		80F0F2071F75811100EC5A7A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80F0F2061F75811100EC5A7A /* AVFoundation.framework */; };
 		80F0F2131F75874D00EC5A7A /* PiPControlWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F0F2121F75874D00EC5A7A /* PiPControlWindowController.swift */; };
-		80F0F2151F758CD100EC5A7A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 80F0F2141F758CD100EC5A7A /* Foundation.framework */; };
+		D20D206C206FC1FC002D2F01 /* icon.icns in Resources */ = {isa = PBXBuildFile; fileRef = D20D206B206FC1FC002D2F01 /* icon.icns */; };
+		D20D206E206FC1FC002D2F01 /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D20D206D206FC1FC002D2F01 /* ShareViewController.swift */; };
+		D20D2071206FC1FC002D2F01 /* ShareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D20D206F206FC1FC002D2F01 /* ShareViewController.xib */; };
+		D20D2076206FC1FC002D2F01 /* BetterPiPShare.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D20D2069206FC1FB002D2F01 /* BetterPiPShare.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D20D2074206FC1FC002D2F01 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 80F0F1E51F75805E00EC5A7A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D20D2068206FC1FB002D2F01;
+			remoteInfo = BetterPiPShare;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D20D207A206FC1FC002D2F01 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D20D2076206FC1FC002D2F01 /* BetterPiPShare.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		80F0F1ED1F75805E00EC5A7A /* BetterPiP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterPiP.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,8 +51,6 @@
 		80F0F1F71F75805E00EC5A7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		80F0F1F91F75805E00EC5A7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		80F0F2001F75808200EC5A7A /* PIP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PIP.framework; sourceTree = "<group>"; };
-		80F0F2041F7580E300EC5A7A /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
-		80F0F2061F75811100EC5A7A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		80F0F20A1F75820400EC5A7A /* BetterPiP-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BetterPiP-Bridging-Header.h"; sourceTree = "<group>"; };
 		80F0F20B1F75829200EC5A7A /* PIPViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PIPViewController.h; sourceTree = "<group>"; };
 		80F0F20C1F7582B500EC5A7A /* PIPViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PIPViewControllerDelegate.h; sourceTree = "<group>"; };
@@ -37,7 +60,12 @@
 		80F0F2101F75832800EC5A7A /* NSEvent-PIPExtensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSEvent-PIPExtensions.h"; sourceTree = "<group>"; };
 		80F0F2111F75833600EC5A7A /* CDStructures.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDStructures.h; sourceTree = "<group>"; };
 		80F0F2121F75874D00EC5A7A /* PiPControlWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PiPControlWindowController.swift; sourceTree = "<group>"; };
-		80F0F2141F758CD100EC5A7A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D20D2069206FC1FB002D2F01 /* BetterPiPShare.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = BetterPiPShare.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		D20D206B206FC1FC002D2F01 /* icon.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = icon.icns; sourceTree = "<group>"; };
+		D20D206D206FC1FC002D2F01 /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		D20D2070206FC1FC002D2F01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ShareViewController.xib; sourceTree = "<group>"; };
+		D20D2072206FC1FC002D2F01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D20D2073206FC1FC002D2F01 /* BetterPiPShare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BetterPiPShare.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,10 +73,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				80F0F2151F758CD100EC5A7A /* Foundation.framework in Frameworks */,
-				80F0F2071F75811100EC5A7A /* AVFoundation.framework in Frameworks */,
-				80F0F2051F7580E300EC5A7A /* AVKit.framework in Frameworks */,
 				80F0F2021F75808200EC5A7A /* PIP.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D20D2066206FC1FB002D2F01 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,8 +106,8 @@
 			isa = PBXGroup;
 			children = (
 				80F0F1EF1F75805E00EC5A7A /* BetterPiP */,
+				D20D206A206FC1FC002D2F01 /* BetterPiPShare */,
 				80F0F1EE1F75805E00EC5A7A /* Products */,
-				80F0F2031F7580E300EC5A7A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				80F0F1ED1F75805E00EC5A7A /* BetterPiP.app */,
+				D20D2069206FC1FB002D2F01 /* BetterPiPShare.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,14 +135,16 @@
 			path = BetterPiP;
 			sourceTree = "<group>";
 		};
-		80F0F2031F7580E300EC5A7A /* Frameworks */ = {
+		D20D206A206FC1FC002D2F01 /* BetterPiPShare */ = {
 			isa = PBXGroup;
 			children = (
-				80F0F2141F758CD100EC5A7A /* Foundation.framework */,
-				80F0F2061F75811100EC5A7A /* AVFoundation.framework */,
-				80F0F2041F7580E300EC5A7A /* AVKit.framework */,
+				D20D206B206FC1FC002D2F01 /* icon.icns */,
+				D20D206D206FC1FC002D2F01 /* ShareViewController.swift */,
+				D20D206F206FC1FC002D2F01 /* ShareViewController.xib */,
+				D20D2072206FC1FC002D2F01 /* Info.plist */,
+				D20D2073206FC1FC002D2F01 /* BetterPiPShare.entitlements */,
 			);
-			name = Frameworks;
+			path = BetterPiPShare;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -122,15 +157,34 @@
 				80F0F1E91F75805E00EC5A7A /* Sources */,
 				80F0F1EA1F75805E00EC5A7A /* Frameworks */,
 				80F0F1EB1F75805E00EC5A7A /* Resources */,
+				D20D207A206FC1FC002D2F01 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D20D2075206FC1FC002D2F01 /* PBXTargetDependency */,
 			);
 			name = BetterPiP;
 			productName = BetterPiP;
 			productReference = 80F0F1ED1F75805E00EC5A7A /* BetterPiP.app */;
 			productType = "com.apple.product-type.application";
+		};
+		D20D2068206FC1FB002D2F01 /* BetterPiPShare */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D20D2079206FC1FC002D2F01 /* Build configuration list for PBXNativeTarget "BetterPiPShare" */;
+			buildPhases = (
+				D20D2065206FC1FB002D2F01 /* Sources */,
+				D20D2066206FC1FB002D2F01 /* Frameworks */,
+				D20D2067206FC1FB002D2F01 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BetterPiPShare;
+			productName = BetterPiPShare;
+			productReference = D20D2069206FC1FB002D2F01 /* BetterPiPShare.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -138,13 +192,19 @@
 		80F0F1E51F75805E00EC5A7A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Lukas von Mateffy";
 				TargetAttributes = {
 					80F0F1EC1F75805E00EC5A7A = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = C6DMLW3W5B;
+						DevelopmentTeam = VWP2ERD75S;
+						LastSwiftMigration = 0930;
+						ProvisioningStyle = Automatic;
+					};
+					D20D2068206FC1FB002D2F01 = {
+						CreatedOnToolsVersion = 9.3;
+						DevelopmentTeam = VWP2ERD75S;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -163,6 +223,7 @@
 			projectRoot = "";
 			targets = (
 				80F0F1EC1F75805E00EC5A7A /* BetterPiP */,
+				D20D2068206FC1FB002D2F01 /* BetterPiPShare */,
 			);
 		};
 /* End PBXProject section */
@@ -174,6 +235,15 @@
 			files = (
 				80F0F1F51F75805E00EC5A7A /* Assets.xcassets in Resources */,
 				80F0F1F81F75805E00EC5A7A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D20D2067206FC1FB002D2F01 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D20D2071206FC1FC002D2F01 /* ShareViewController.xib in Resources */,
+				D20D206C206FC1FC002D2F01 /* icon.icns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,7 +260,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D20D2065206FC1FB002D2F01 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D20D206E206FC1FC002D2F01 /* ShareViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D20D2075206FC1FC002D2F01 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D20D2068206FC1FB002D2F01 /* BetterPiPShare */;
+			targetProxy = D20D2074206FC1FC002D2F01 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		80F0F1F61F75805E00EC5A7A /* Main.storyboard */ = {
@@ -199,6 +285,14 @@
 				80F0F1F71F75805E00EC5A7A /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		D20D206F206FC1FC002D2F01 /* ShareViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D20D2070206FC1FC002D2F01 /* Base */,
+			);
+			name = ShareViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -214,15 +308,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -251,6 +353,7 @@
 				SDKROOT = macosx;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 			};
 			name = Debug;
 		};
@@ -264,15 +367,23 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -293,15 +404,17 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 			};
 			name = Release;
 		};
 		80F0F1FD1F75805E00EC5A7A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = C6DMLW3W5B;
+				DEVELOPMENT_TEAM = VWP2ERD75S;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BetterPiP",
@@ -311,16 +424,18 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.mateffy.BetterPiP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "BetterPiP/PIP/BetterPiP-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
 		80F0F1FE1F75805E00EC5A7A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = C6DMLW3W5B;
+				DEVELOPMENT_TEAM = VWP2ERD75S;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BetterPiP",
@@ -330,7 +445,50 @@
 				PRODUCT_BUNDLE_IDENTIFIER = me.mateffy.BetterPiP;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "BetterPiP/PIP/BetterPiP-Bridging-Header.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		D20D2077206FC1FC002D2F01 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = BetterPiPShare/BetterPiPShare.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VWP2ERD75S;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = BetterPiPShare/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = me.mateffy.BetterPiP.BetterPiPShare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		D20D2078206FC1FC002D2F01 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = BetterPiPShare/BetterPiPShare.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = VWP2ERD75S;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = BetterPiPShare/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				PRODUCT_BUNDLE_IDENTIFIER = me.mateffy.BetterPiP.BetterPiPShare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -351,6 +509,15 @@
 			buildConfigurations = (
 				80F0F1FD1F75805E00EC5A7A /* Debug */,
 				80F0F1FE1F75805E00EC5A7A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D20D2079206FC1FC002D2F01 /* Build configuration list for PBXNativeTarget "BetterPiPShare" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D20D2077206FC1FC002D2F01 /* Debug */,
+				D20D2078206FC1FC002D2F01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

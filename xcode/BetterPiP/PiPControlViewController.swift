@@ -10,10 +10,11 @@ import Cocoa
 import AVKit
 import AVFoundation
 
-class PiPControlViewController: NSViewController {
+final class PiPControlViewController: NSViewController {
 
     @IBOutlet weak var playerView: AVPlayerView!
     
+    var timeObserverToken:Any?
     var player: AVPlayer? = nil
     var pipIsActive = false
     lazy var pip: PIPViewController! = {
@@ -42,6 +43,7 @@ class PiPControlViewController: NSViewController {
         playerView.player = player;
         
         openPIP()
+        
     }
     
     override func viewDidLoad() {
@@ -53,35 +55,47 @@ class PiPControlViewController: NSViewController {
     /// We also keep an instance of the current view so when the PIPPanel closes we can return it back to its original state.
     func openPIP() {
         if !pipIsActive {
+            guard let player = self.player else { return }
+            
             pip.presentAsPicture(inPicture: self)
-            pip.setPlaying(true)
-            pipIsActive = true
+            // pipIsActive = true
+            
+            player.play()
+            
+            if player.isPlaying {
+                pip.setPlaying(true)
+            }
         }
     }
-
-
+    
 }
 
 extension PiPControlViewController: PIPViewControllerDelegate {
     /// Called when the PIPPanel closes
     func pipDidClose(_ pip: PIPViewController!) {
+        print("pipDidClose")
         player?.pause()
     }
     
     /// Called when the PIPPanel stops playing
     func pipActionStop(_ pip: PIPViewController!) {
+        print("pipActionStop")
         player?.pause()
+        NSApplication.shared.terminate(nil)
     }
     
     /// Called when the play button in the PIPPanel is clicked
     func pipActionPlay(_ pip: PIPViewController!) {
+        print("pipActionPlay")
         player?.play()
     }
     
     /// Called when the pause button in the PIPPanel is clicked
     func pipActionPause(_ pip: PIPViewController!) {
+        print("pipActionPause")
         player?.pause()
     }
+    
 }
 
 extension AVPlayer {
