@@ -16,26 +16,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let menu = NSMenu()
     var launchedWithUrl = false
     
+    var welcomeWindow: WelcomeWindowController!
+    
     func application(_ application: NSApplication, open urls: [URL]) {
         print("launched with url")
         
         launchedWithUrl = true
-        
-        let appleEventManager = NSAppleEventManager.shared()
-        appleEventManager.setEventHandler(self, andSelector: #selector(handleURL), forEventClass: AEEventClass(kInternetEventClass), andEventID: AEEventID(kAEGetURL))
-        
-        if let button = statusItem.button {
-            button.image = NSImage(named: NSImage.Name("StatusBarButtonImage"))
-        }
-        
-        //let menu = NSMenu()
-        
-        //        menu.addItem(NSMenuItem(title: "Install Chrome Extension", action: #selector(openChromeExtensionPage), keyEquivalent: ""))
-        //        menu.addItem(NSMenuItem.separator())
-        
-        menu.addItem(NSMenuItem(title: "Quit BetterPiP", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
-        
-        statusItem.menu = menu
         
         if urls.count == 0 { return }
         
@@ -49,6 +35,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             startTime = Float(startTimeString)!
         }
         
+        // Open PiP Window
         guard let window = NSStoryboard(name : NSStoryboard.Name(rawValue: "Main"), bundle: nil).instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "mainWindow")) as? PiPControlWindowController else { return }
         
         //print("Received URL: \(queryUrl)")
@@ -56,19 +43,36 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         window.showVideo(url: URL(string: queryUrl)!, seconds: startTime)
     }
-    
-    func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
 
-        print("launched")
+    func applicationDidFinishLaunching(_ aNotification: Notification) {
+        // Set the app as an accessory and then push it to the front to show the welcome panel
+        NSApp.setActivationPolicy(.accessory)
+        NSApp.activate(ignoringOtherApps: true)
         
-        if !launchedWithUrl {
-            print("no launch url found")
-            NSApplication.shared.terminate(nil)
+        // Subscribe to URL events (for opening links once the app is open already)
+        let appleEventManager = NSAppleEventManager.shared()
+        appleEventManager.setEventHandler(self, andSelector: #selector(handleURL), forEventClass: AEEventClass(kInternetEventClass), andEventID: AEEventID(kAEGetURL))
+        
+        // Add Status Bar Icon and Menu
+        if let button = statusItem.button {
+            button.image = NSImage(named: NSImage.Name("StatusBarButtonImage"))
         }
+        
+        menu.addItem(NSMenuItem(title: "About BetterPiP", action: #selector(showAboutWindow), keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: "Install Extensions", action: #selector(openExtensionPage), keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: "Help", action: #selector(openHelpPage), keyEquivalent: ""))
+        menu.addItem(NSMenuItem.separator())
+        menu.addItem(NSMenuItem(title: "Quit BetterPiP", action: #selector(NSApplication.terminate(_:)), keyEquivalent: "q"))
+        
+        statusItem.menu = menu
+        
+        // Show the welcome panel
+        self.welcomeWindow = NSStoryboard(name : NSStoryboard.Name(rawValue: "Welcome"), bundle: nil).instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "welcomeWindow")) as! WelcomeWindowController
+        welcomeWindow.showWindow(self)
         
     }
     
+    // Handle an incoming URL (betterpip: scheme)
     @objc func handleURL(event: NSAppleEventDescriptor, reply: NSAppleEventDescriptor) {
         
         let window = NSStoryboard(name : NSStoryboard.Name(rawValue: "Main"), bundle: nil).instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "mainWindow")) as! PiPControlWindowController
@@ -97,12 +101,26 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 //        NSUserNotificationCenter.default.deliver(notification)
 //    }
     
-//    func openChromeExtensionPage() {
-//        if let url = URL(string: "https://www.google.com"), NSWorkspace.shared().open(url) {
-//            print("default browser was successfully opened")
-//        }
-//
-//    }
+    // Force the application in front and show the about panel
+    @objc func showAboutWindow() {
+        NSApp.activate(ignoringOtherApps: true)
+        NSApplication.shared.orderFrontStandardAboutPanel(self)
+    }
+    
+    // Open the help page website
+    @objc func openHelpPage() {
+        if let url = URL(string: "https://mateffy.me/betterpip/help"), NSWorkspace.shared.open(url) {
+            print("help page opened")
+        }
+    }
+    
+    // Open the webpage to install the extensions
+    @objc func openExtensionPage() {
+        if let url = URL(string: "https://mateffy.me/betterpip/extensions"), NSWorkspace.shared.open(url) {
+            print("extensions page opened")
+        }
+
+    }
     
 }
 

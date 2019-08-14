@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		803E0CB323048CEB00653E74 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803E0CB223048CEB00653E74 /* WelcomeViewController.swift */; };
+		805E1C2D23047BD8008BEE3C /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 805E1C2C23047BD8008BEE3C /* Welcome.storyboard */; };
+		805E1C2F23047F85008BEE3C /* WelcomeWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805E1C2E23047F85008BEE3C /* WelcomeWindowController.swift */; };
 		80F0F1F11F75805E00EC5A7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F0F1F01F75805E00EC5A7A /* AppDelegate.swift */; };
 		80F0F1F31F75805E00EC5A7A /* PiPControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F0F1F21F75805E00EC5A7A /* PiPControlViewController.swift */; };
 		80F0F1F51F75805E00EC5A7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 80F0F1F41F75805E00EC5A7A /* Assets.xcassets */; };
@@ -44,6 +47,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		803E0CB223048CEB00653E74 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		805E1C2C23047BD8008BEE3C /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
+		805E1C2E23047F85008BEE3C /* WelcomeWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeWindowController.swift; sourceTree = "<group>"; };
 		80F0F1ED1F75805E00EC5A7A /* BetterPiP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterPiP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		80F0F1F01F75805E00EC5A7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		80F0F1F21F75805E00EC5A7A /* PiPControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiPControlViewController.swift; sourceTree = "<group>"; };
@@ -124,10 +130,13 @@
 			isa = PBXGroup;
 			children = (
 				80F0F1F01F75805E00EC5A7A /* AppDelegate.swift */,
+				805E1C2E23047F85008BEE3C /* WelcomeWindowController.swift */,
+				803E0CB223048CEB00653E74 /* WelcomeViewController.swift */,
 				80F0F2121F75874D00EC5A7A /* PiPControlWindowController.swift */,
 				80F0F1F21F75805E00EC5A7A /* PiPControlViewController.swift */,
 				80F0F1F41F75805E00EC5A7A /* Assets.xcassets */,
 				80F0F1F61F75805E00EC5A7A /* Main.storyboard */,
+				805E1C2C23047BD8008BEE3C /* Welcome.storyboard */,
 				80F0F1F91F75805E00EC5A7A /* Info.plist */,
 				80F0F2001F75808200EC5A7A /* PIP.framework */,
 				80B32F7A1F7C136700CEA192 /* PIP */,
@@ -198,7 +207,6 @@
 				TargetAttributes = {
 					80F0F1EC1F75805E00EC5A7A = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = VWP2ERD75S;
 						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 					};
@@ -235,6 +243,7 @@
 			files = (
 				80F0F1F51F75805E00EC5A7A /* Assets.xcassets in Resources */,
 				80F0F1F81F75805E00EC5A7A /* Main.storyboard in Resources */,
+				805E1C2D23047BD8008BEE3C /* Welcome.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +263,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				805E1C2F23047F85008BEE3C /* WelcomeWindowController.swift in Sources */,
+				803E0CB323048CEB00653E74 /* WelcomeViewController.swift in Sources */,
 				80F0F1F31F75805E00EC5A7A /* PiPControlViewController.swift in Sources */,
 				80F0F1F11F75805E00EC5A7A /* AppDelegate.swift in Sources */,
 				80F0F2131F75874D00EC5A7A /* PiPControlWindowController.swift in Sources */,
@@ -347,7 +358,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -400,7 +411,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -414,7 +425,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = VWP2ERD75S;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BetterPiP",
@@ -435,7 +446,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_TEAM = VWP2ERD75S;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/BetterPiP",
