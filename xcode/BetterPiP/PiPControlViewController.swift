@@ -81,7 +81,6 @@ extension PiPControlViewController: PIPViewControllerDelegate {
     func pipActionStop(_ pip: PIPViewController!) {
         print("pipActionStop")
         player?.pause()
-        NSApplication.shared.terminate(nil)
     }
     
     /// Called when the play button in the PIPPanel is clicked

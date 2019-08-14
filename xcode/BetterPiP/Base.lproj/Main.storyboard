@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.AVKitIBPlugin" version="13196"/>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13196"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -659,7 +660,7 @@
                 <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="BetterPiP" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="-455" y="-438"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -680,7 +681,77 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="-424" y="-194"/>
+        </scene>
+        <!--Window Controller-->
+        <scene sceneID="wAp-i4-YnG">
+            <objects>
+                <windowController storyboardIdentifier="playVideoWindow" showSeguePresentationStyle="single" id="C7Q-cs-LE2" sceneMemberID="viewController">
+                    <window key="window" title="Play Video Stream" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" id="Lcx-bI-AsB">
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
+                        <rect key="contentRect" x="681" y="344" width="480" height="270"/>
+                        <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1058"/>
+                        <connections>
+                            <outlet property="delegate" destination="C7Q-cs-LE2" id="J88-zC-tA1"/>
+                        </connections>
+                    </window>
+                    <connections>
+                        <segue destination="W1R-N7-Xu2" kind="relationship" relationship="window.shadowedContentViewController" id="zcy-Ju-YP6"/>
+                    </connections>
+                </windowController>
+                <customObject id="7YH-yA-63p" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-424" y="225"/>
+        </scene>
+        <!--Play Video View Controller-->
+        <scene sceneID="SV8-6V-b27">
+            <objects>
+                <viewController storyboardIdentifier="playVideoVC" id="W1R-N7-Xu2" customClass="PlayVideoViewController" customModule="BetterPiP" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="bMh-xG-emS">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="82"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xw2-0j-3Dg">
+                                <rect key="frame" x="400" y="13" width="66" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Play" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Mrs-sd-LLv">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="onPlayPressedWithSender:" target="W1R-N7-Xu2" id="CjL-qj-AVC"/>
+                                </connections>
+                            </button>
+                            <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fCv-y4-kP7">
+                                <rect key="frame" x="20" y="20" width="378" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" placeholderString="Paste URL here (e.g. https://youtube.com/watch?v=Xs_...)" bezelStyle="round" id="tCH-eq-o1o">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AUT-gw-UsX">
+                                <rect key="frame" x="20" y="45" width="353" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Video URL (not webpage, but a URL to a video stream like .mp4)" id="D5L-fs-GdJ">
+                                    <font key="font" metaFont="systemSemibold" size="11"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="urlField" destination="fCv-y4-kP7" id="Lev-Z2-jqX"/>
+                    </connections>
+                </viewController>
+                <customObject id="uJh-SM-ggQ" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="156" y="218"/>
         </scene>
         <!--PiP Control View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -707,7 +778,7 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="723"/>
+            <point key="canvasLocation" x="156" y="-194"/>
         </scene>
     </scenes>
 </document>

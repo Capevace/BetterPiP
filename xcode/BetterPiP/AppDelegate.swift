@@ -17,6 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var launchedWithUrl = false
     
     var welcomeWindow: WelcomeWindowController!
+    var playVideoWindow: NSWindowController!
     
     func application(_ application: NSApplication, open urls: [URL]) {
         print("launched with url")
@@ -59,6 +60,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         
         menu.addItem(NSMenuItem(title: "About BetterPiP", action: #selector(showAboutWindow), keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: "Play Video Stream", action: #selector(openPlayVideoWindow), keyEquivalent: "p"))
         menu.addItem(NSMenuItem(title: "Install Extensions", action: #selector(openExtensionPage), keyEquivalent: ""))
         menu.addItem(NSMenuItem(title: "Help", action: #selector(openHelpPage), keyEquivalent: ""))
         menu.addItem(NSMenuItem.separator())
@@ -67,14 +69,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.menu = menu
         
         // Show the welcome panel
-        self.welcomeWindow = NSStoryboard(name : NSStoryboard.Name(rawValue: "Welcome"), bundle: nil).instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "welcomeWindow")) as! WelcomeWindowController
+        welcomeWindow = NSStoryboard(name : NSStoryboard.Name(rawValue: "Welcome"), bundle: nil).instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "welcomeWindow")) as! WelcomeWindowController
         welcomeWindow.showWindow(self)
         
     }
     
     // Handle an incoming URL (betterpip: scheme)
     @objc func handleURL(event: NSAppleEventDescriptor, reply: NSAppleEventDescriptor) {
-        
         let window = NSStoryboard(name : NSStoryboard.Name(rawValue: "Main"), bundle: nil).instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "mainWindow")) as! PiPControlWindowController
 
         let url = URL(string: (event.paramDescriptor(forKeyword: keyDirectObject)?.stringValue)!)
@@ -119,7 +120,19 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if let url = URL(string: "https://mateffy.me/betterpip/extensions"), NSWorkspace.shared.open(url) {
             print("extensions page opened")
         }
-
+    }
+    
+    // Open play video window
+    @objc func openPlayVideoWindow() {
+        NSApp.activate(ignoringOtherApps: true)
+        
+        if (playVideoWindow !== nil) {
+            playVideoWindow.close()
+        }
+        
+        playVideoWindow = NSStoryboard(name:NSStoryboard.Name(rawValue: "Main"), bundle: nil)
+            .instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "playVideoWindow")) as! NSWindowController
+        playVideoWindow.showWindow(self)
     }
     
 }

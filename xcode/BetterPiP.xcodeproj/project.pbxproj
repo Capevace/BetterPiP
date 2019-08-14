@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		803E0CB323048CEB00653E74 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803E0CB223048CEB00653E74 /* WelcomeViewController.swift */; };
+		803E0CB52304B73000653E74 /* PlayVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 803E0CB42304B73000653E74 /* PlayVideoViewController.swift */; };
 		805E1C2D23047BD8008BEE3C /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 805E1C2C23047BD8008BEE3C /* Welcome.storyboard */; };
 		805E1C2F23047F85008BEE3C /* WelcomeWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805E1C2E23047F85008BEE3C /* WelcomeWindowController.swift */; };
 		80F0F1F11F75805E00EC5A7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F0F1F01F75805E00EC5A7A /* AppDelegate.swift */; };
@@ -48,6 +49,7 @@
 
 /* Begin PBXFileReference section */
 		803E0CB223048CEB00653E74 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		803E0CB42304B73000653E74 /* PlayVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayVideoViewController.swift; sourceTree = "<group>"; };
 		805E1C2C23047BD8008BEE3C /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		805E1C2E23047F85008BEE3C /* WelcomeWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeWindowController.swift; sourceTree = "<group>"; };
 		80F0F1ED1F75805E00EC5A7A /* BetterPiP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterPiP.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				80F0F1F01F75805E00EC5A7A /* AppDelegate.swift */,
+				803E0CB42304B73000653E74 /* PlayVideoViewController.swift */,
 				805E1C2E23047F85008BEE3C /* WelcomeWindowController.swift */,
 				803E0CB223048CEB00653E74 /* WelcomeViewController.swift */,
 				80F0F2121F75874D00EC5A7A /* PiPControlWindowController.swift */,
@@ -265,6 +268,7 @@
 			files = (
 				805E1C2F23047F85008BEE3C /* WelcomeWindowController.swift in Sources */,
 				803E0CB323048CEB00653E74 /* WelcomeViewController.swift in Sources */,
+				803E0CB52304B73000653E74 /* PlayVideoViewController.swift in Sources */,
 				80F0F1F31F75805E00EC5A7A /* PiPControlViewController.swift in Sources */,
 				80F0F1F11F75805E00EC5A7A /* AppDelegate.swift in Sources */,
 				80F0F2131F75874D00EC5A7A /* PiPControlWindowController.swift in Sources */,
