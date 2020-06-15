@@ -1,4 +1,8 @@
-# BetterPiP
+<p align="center"><img alt="halbert logo" src="/halbert.jpg?raw=true"></p>
+<h1 align="center">BetterPiP</h1>
+<h4 align="center">
+  Native macOS picture-in-picture in Firefox and Chrome
+</h4>
 
 ## Project archived
 Due to Firefox and Chrome now having their own picture-in-picture solutions, I've decided to archive this repo. Might still be helpful for learning how to utilize macOS PIP.framework.
