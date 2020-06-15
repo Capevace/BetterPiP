@@ -1,4 +1,4 @@
-<p align="center"><img alt="halbert logo" src="icon.png"></p>
+<p align="center"><img alt="halbert logo" src="icon.png" style="max-width: 10rem;"></p>
 <h1 align="center">BetterPiP</h1>
 <h4 align="center">
   Native macOS picture-in-picture in Firefox and Chrome
